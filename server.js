@@ -3,6 +3,8 @@ var moment = require('moment');
 
 var app = express();
 
+var port = process.env.PORT || 8080;
+
 app.get('/:date', function(req, res){
 
   var date = req.params.date;
@@ -47,4 +49,6 @@ app.get('/:date', function(req, res){
   
 });
 
-app.listen(8080);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
